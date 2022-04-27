@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="dash.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+
+
+    <script
+      type="text/javascript"
+      src="https://www.gstatic.com/charts/loader.js"
+    ></script>
+    <script type="text/javascript">
+      google.charts.load("current", { packages: ["corechart"] });
+      google.charts.setOnLoadCallback(drawChart1);
+      google.charts.setOnLoadCallback(drawChart2);
+
+      function drawChart1() {
+        var data = google.visualization.arrayToDataTable(
+          [
+            ["Mon", 20, 28, 38, 45],
+            ["Tue", 31, 38, 55, 66],
+            ["Wed", 50, 55, 77, 80],
+            ["Thu", 77, 77, 66, 50],
+            ["Fri", 68, 66, 22, 15],
+            // Treat first row as data as well.
+          ],
+          true
+        );
+
+        var options = {
+          legend: "none",
+          title: "CandleStick",
+          backgroundColour: "red"
+          
+        };
+
+        var chart = new google.visualization.CandlestickChart(
+          document.getElementById("chart_cs")
+        );
+
+        chart.draw(data, options);
+      }
+      function drawChart2() {
+        var data = google.visualization.arrayToDataTable([
+          ["Coins", "Investment"],
+          ["ETH", 11],
+          ["BTC", 2],
+          ["MATIC", 2],
+          ["SOL", 2],
+          ["ADA", 7],
+        ]);
+
+        var options = {
+          title: "Investment Donut",
+          pieHole: 0.4,
+          backgroundColour: "red"
+          //is3D: true,
+        };
+
+        var chart = new google.visualization.PieChart(
+          document.getElementById("piechart_3d")
+        );
+        chart.draw(data, options);
+      }
+    </script>
+
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="main">
+      <div id="header">
+        <div id="profile-pic">
+          <img
+            src="https://media-exp1.licdn.com/dms/image/C4E03AQGMmnesmhP8HA/profile-displayphoto-shrink_200_200/0/1642152484941?e=2147483647&v=beta&t=MuM_qYpfwd6z6Cc9Wxo6dcfmh-jYtrBqdSyyfviUk7Q"
+            alt="no dp"
+          />
+        </div>
+        <div id="Name">Takshil Kunadia</div>
+        <div id="Value">
+            $ 77,000
+        </div>
+      </div>
+      <div id="coin-detail">
+        <div id="cschart">
+          <div id="chart_cs" style="width: 700px; height: 500px"></div>
+        </div>
+        <div id="piechart">
+          <div id="piechart_3d" style="width: 700px; height: 500px"></div>
+        </div>
+      </div>
+      <div id="profile-details">
+        <div id="Coins">
+          <div class="card-container">
+            <div class="card">
+              <header class="article-header">
+                <div>
+                  <div class="category-title">
+                    Suggestions
+                    <span class="date">Jan 19, 2020</span>
+                  </div>
+                </div>
+                <h2 class="article-title">Market's Top Coins</h2>
+              </header>
+              <div class="author">
+                <div class="profile"></div>
+                <div class="info">
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Ethereum_logo_2014.svg/1257px-Ethereum_logo_2014.svg.png"
+                    alt=""
+                  />
+                  <div class="caption">Owner</div>
+                  <div class="name">ETH</div>
+                </div>
+              </div>
+              <div class="tags">
+                <div>Buy</div>
+                <div>Sell</div>
+              </div>
+            </div>
+            <!-- repeat the card here. -->
+            <div class="card">
+              <header class="article-header">
+                <div>
+                  <div class="category-title">
+                    Suggestions
+                    <span class="date">Jan 19, 2020</span>
+                  </div>
+                </div>
+                <h2 class="article-title">Rising Quick</h2>
+              </header>
+              <div class="author">
+                <div class="profile"></div>
+                <div class="info">
+                  <img
+                    src="https://cryptologos.cc/logos/polygon-matic-logo.png"
+                    alt=""
+                  />
+                  <div class="caption">Owner</div>
+                  <div class="name">MATIC</div>
+                </div>
+              </div>
+              <div class="tags">
+                <div>Buy</div>
+                <div>Sell</div>
+              </div>
+            </div>
+            <div class="card"> <header class="article-header">
+                <div>
+                  <div class="category-title">
+                    Suggestions
+                    <span class="date">Jan 19, 2020</span>
+                  </div>
+                </div>
+                <h2 class="article-title">Newest</h2>
+              </header>
+              <div class="author">
+                <div class="profile"></div>
+                <div class="info">
+                  <img
+                    src="https://s3.cointelegraph.com/storage/uploads/view/a7872fcc56858227ffa183256a5d55e1.png"
+                    alt=""
+                  />
+                  <div class="caption">Owner</div>
+                  <div class="name">CARDANO</div>
+                </div>
+              </div>
+              <div class="tags">
+                <div>Buy</div>
+                <div>Sell</div>
+              </div>
+            </div><div class="card">
+                <header class="article-header">
+                  <div>
+                    <div class="category-title">
+                      Suggestions
+                      <span class="date">Jan 19, 2020</span>
+                    </div>
+                  </div>
+                  <h2 class="article-title">Losing Momentum</h2>
+                </header>
+                <div class="author">
+                  <div class="profile"></div>
+                  <div class="info">
+                    <img
+                      src="https://cryptologos.cc/logos/xrp-xrp-logo.png"
+                      alt=""
+                    />
+                    <div class="caption">Owner</div>
+                    <div class="name">RIPPLE</div>
+                  </div>
+                </div>
+                <div class="tags">
+                  <div>Buy</div>
+                  <div>Sell</div>
+                </div>
+              </div></div>
+          </div>
+        
+        <div id="converter">
+          <div class="wrapper">
+            <header>Currency Converter</header>
+            <form action="#">
+              <div class="amount">
+                <p>Enter Amount</p>
+                <input type="text" value="1" />
+              </div>
+              <div class="drop-list">
+                <div class="from">
+                  <p>From</p>
+                  <div class="select-box">
+                    <img src="https://flagcdn.com/48x36/us.png" alt="flag" />
+                    <select>
+                      <!-- Options tag are inserted from JavaScript -->
+                    </select>
+                  </div>
+                </div>
+                <div class="icon"><i class="fas fa-exchange-alt"></i></div>
+                <div class="to">
+                  <p>To</p>
+                  <div class="select-box">
+                    <img src="https://flagcdn.com/48x36/np.png" alt="flag" />
+                    <select>
+                      <!-- Options tag are inserted from JavaScript -->
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="exchange-rate">Getting exchange rate...</div>
+              <button>Get Exchange Rate</button>
+            </form>
+          </div>
+          <script src="js/country-list.js"></script>
+          <script src="js/script.js"></script>
+        </div>
+    </div>
+      </div>
+    </div>
+    
+  </body>
+</html>
